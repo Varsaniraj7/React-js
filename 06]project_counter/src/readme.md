@@ -35,4 +35,38 @@ Array :- It is a collection of different data values and seqeunce store the valu
 Object :- It is used pair of key and values.
 
 
-Spread
+Spread :- It is itering the value from another place and expand them values.(place=array,object,etc)
+          It is defined as a (...)
+
+
+Map Method only can access in html code..
+
+
+Modules :- It means those item will import or export.
+
+
+Export Default :- Only one item export in one components.
+
+Export :- Multiple item export in one components.
+
+
+Components :- It is reusable piece of code.
+              Two Types :-
+                           1] Functional Components :- It provides UI.
+                                                       Shortcut => rfc, rfce
+                                                       It does not have state, props and lifecycle methods.
+                                                       NO methods
+
+                           2] Class Components :- In the component use in ES6 class, like opps concepts.
+                                                  Shortcut => rcc
+                                                  It does  have state, props and lifecycle methods.
+                                                  Three Types : 1) Components did mount ()
+                                                                2) Components did update ()
+                                                                3) Components will unmount ()
+
+
+Props :- It is stand for Properties. 
+         It is direction follow like parent to child components.
+
+
+state :- It means we can store value and updating the values.
