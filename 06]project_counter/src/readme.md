@@ -32,4 +32,7 @@ JSX :- JSX stands for Javascript Syntax Extentions.
 
 Array :- It is a collection of different data values and seqeunce store the values.
 
-Object :- It is 
+Object :- It is used pair of key and values.
+
+
+Spread
