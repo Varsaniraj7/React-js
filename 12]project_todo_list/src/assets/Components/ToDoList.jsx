@@ -6,11 +6,11 @@ export default function ToDoList() {
   
     const inputRef = useRef();
 
-    const handleInputChange = (e) => {
+    const InputChange = (e) => {
         setInputValue(e.target.value);
     };
   
-    const handleAddTodo = () => {
+    const AddTodo = () => {
         setTodos([...todos, inputValue]);
         setInputValue('');
         setTimeout(() => {
@@ -25,12 +25,12 @@ export default function ToDoList() {
                 <input
                     type="text"
                     value={inputValue}
-                    onChange={handleInputChange}
+                    onChange={InputChange}
                     ref={inputRef}
                     className="todo-input"
                     placeholder="Add a new task"
                 />
-                <button onClick={handleAddTodo} className="add-button">Add Todo</button>
+                <button onClick={AddTodo} className="add-button">Add Todo</button>
             </div>
             <ul className="todo-list">
                 {todos.map((todo, index) => (
