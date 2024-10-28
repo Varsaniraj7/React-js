@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <!-- navbar -->
-     <div class="nav-container">
+    <div class="nav-container">
         <div class="logo">
             <img src="img/Logo.png" alt="">
         </div>
-        <div class="nav-link">
+        <div class="nav-link" id="nav-links">
             <a href="#">About us</a>
             <a href="#">Services</a>
             <a href="#">Use Cases</a>
@@ -20,6 +28,114 @@
             <a href="#">Blog</a>
             <button>Request a quote</button>
         </div>
-     </div>
+        <div class="menu" id="menu">
+            <i class='bx bx-menu'></i>
+        </div>
+    </div>
+    <script>
+        const menu = document.getElementById("menu");
+        const navLinks = document.getElementById("nav-links");
+
+        menu.addEventListener("click", () => {
+            navLinks.classList.toggle("show"); // Toggle the show class
+            // Change the icon on click
+            if (navLinks.classList.contains("show")) {
+                menu.innerHTML = "<i class='bx bx-x'></i>"; // Show close icon
+            } else {
+                menu.innerHTML = "<i class='bx bx-menu'></i>"; // Show menu icon
+            }
+        });
+    </script>
+    <!-- Navbar End -->
+
+
+    <!-- Section-1 -->
+    <div class="section-1-container">
+        <div class="section-1-main">
+            <div class="section-1-heading">
+                <h1>Navigating the digital landscape for success</h1>
+            </div>
+            <div class="section-1-img">
+                <img src="img/Illustration.png" alt="">
+            </div>
+            <div class="section-1-paragraph">
+                <p>Our digital marketing agency helps businesses grow and succeed online through a range of services
+                    including SEO, PPC, social media marketing, and content creation.</p>
+            </div>
+            <div class="section-1-btn">
+                <button>Book a consultation</button>
+            </div>
+        </div>
+        <div class="section-1-main-img">
+            <div class="section-1-img">
+                <img src="img/Illustration.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Section-1 End -->
+
+
+    <!-- Section-2 -->
+    <div class="section-2-container">
+        <div class="section-2-img">
+            <img src="img/Company logo.png" alt="">
+            <img src="img/Company logo (1).png" alt="">
+            <img src="img/Company logo (2).png" alt="">
+            <img src="img/Company logo (3).png" alt="">
+            <img src="img/Company logo (4).png" alt="">
+            <img src="img/Company logo (5).png" alt="">
+        </div>
+    </div>
+    <!-- Section-2 End -->
+
+
+    <!-- Section-3 -->
+    <div class="section-3-container">
+        <div class="section-3-title">
+            <h1>Services</h1>
+            <p>At our digital marketing agency, we offer a range of services to help businesses grow and succeed online.
+                These services include:</p>
+        </div>
+        <div class="section-3-services">
+            <div class="section-3-card" >
+                <div class="section-3-card-all" >
+                    <div class="section-3-card-title">
+                        <h1>Search engine</h1>
+                        <h1>optimization</h1>
+                    </div>
+                    <div class="section-3-card-img">
+                        <div class="section-3-card-arrow" >
+                            <div class="section-3-card-arr">
+                                <i class='bx bx-right-top-arrow-circle'></i>
+                            </div>
+                        </div>
+                        <div class="section-3-card-pic" >
+                            <img src="img/tokyo-magnifier-web-search-with-elements 1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-3-card" >
+                <div class="section-3-card-all" >
+                    <div class="section-3-card-title">
+                        <h1>Search engine</h1>
+                        <h1>optimization</h1>
+                    </div>
+                    <div class="section-3-card-img">
+                        <div class="section-3-card-arrow" >
+                            <div class="section-3-card-arr">
+                                <i class='bx bx-right-top-arrow-circle'></i>
+                            </div>
+                        </div>
+                        <div class="section-3-card-pic" >
+                            <img src="img/tokyo-magnifier-web-search-with-elements 1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section-3 End -->
 </body>
+
 </html>
