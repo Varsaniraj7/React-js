@@ -1,0 +1,49 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* App Component Styles */
+div {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Page-Specific Styles */
+.home {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.about {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 10px;
+}

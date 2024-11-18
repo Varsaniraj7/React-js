@@ -149,7 +149,7 @@ export default function CrudLocalStorage() {
                 <button type="submit" className="submit-btn">{editId ? 'Update' : 'Submit'}</button>
             </form>
 
-            {/* Display data in a table */}
+            
             {record.length > 0 && (
                 <table className="table">
                     <thead>
