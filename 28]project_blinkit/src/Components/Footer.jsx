@@ -1,111 +1,181 @@
-import React from 'react'
+import React from 'react';
 
-export default function Footer() {
+const Footer = () => {
+  const useLinks = [
+    "About",
+    "Careers",
+    "Blog",
+    "Press",
+    "Lead",
+    "Value",
+    "Privacy",
+    "Terms",
+    "FAQs",
+    "Security",
+    "Mobile",
+    "Contact",
+    "Partner",
+    "Franchise",
+    "Seller",
+    "Warehouse",
+    "Deliver",
+    "Resources",
+  ];
+  const column1Links = useLinks.slice(0, 6);
+  const column2Links = useLinks.slice(6, 12);
+  const column3Links = useLinks.slice(12);
+
+
+
+  const categories = [
+    "Vegetables & Fruits",
+    "Cold Drinks & Juices",
+    "Bakery & Biscuits",
+    "Dry Fruits, Masala & Oil",
+    "Paan Corner",
+    "Cleaning Essentials",
+    "Personal Care",
+    "Electronics & Electricals",
+    "Navratri Specials",
+    "Dairy & Breakfast",
+    "Instant & Frozen Food",
+    "Sweet Tooth",
+    "Sauces & Spreads",
+    "Baby Care",
+    "Home & Office",
+    "Pet Care",
+    "Toys & Games",
+    "Munchies",
+    "Tea, Coffee & Health Drinks",
+    "Atta, Rice & Dal",
+    "Organic & Premium",
+    "Pharma & Wellness",
+    "Ice Creams & Frozen Desserts",
+    "Beauty & Cosmetics",
+    "Print Store",
+  ];
+  const column1categories = categories.slice(0, 8);
+  const column2categories = categories.slice(8, 16);
+  const column3categories = categories.slice(16, 24);
+
   return (
-    <footer className="bg-white dark:bg-gray-900">
-      <div className="mx-auto w-full max-w-screen-xl">
-        <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-          {/* Company Section */}
+    <footer className="w-full bg-gray-100 text-gray-600 py-8">
+      <div className="w-[80%] container mx-auto px-4">
+        <div className="flex justify-between  leading-[30px]">
+          {/* Useful Links Section */}
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4">
-                <a href="#" className="hover:underline">About</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Careers</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Brand Center</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Blog</a>
-              </li>
-            </ul>
+            <h5 className="font-bold text-lg mb-4">Useful Links</h5>
+            <div className="grid grid-cols-3 gap-8">
+              {/* Column 1 */}
+              <ul>
+                {column1Links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="hover:underline">{link}</a>
+                  </li>
+                ))}
+              </ul>
+              {/* Column 2 */}
+              <ul>
+                {column2Links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="hover:underline">{link}</a>
+                  </li>
+                ))}
+              </ul>
+              {/* Column 3 */}
+              <ul>
+                {column3Links.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="hover:underline">{link}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Help Center Section */}
+          {/* Categories Section */}
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Discord Server</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Twitter</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Facebook</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Contact Us</a>
-              </li>
-            </ul>
+            <h5 className="font-bold text-lg mb-4">Categories</h5>
+            <div className="grid grid-cols-3 gap-8">
+              {/* Column 1 */}
+              <ul>
+                {column1categories.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="hover:underline">{link}</a>
+                  </li>
+                ))}
+              </ul>
+              {/* Column 2 */}
+              <ul>
+                {column2categories.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="hover:underline">{link}</a>
+                  </li>
+                ))}
+              </ul>
+              {/* Column 3 */}
+              <ul>
+                {column3categories.map((link) => (
+                  <li key={link}>
+                    <a href="#" className="hover:underline">{link}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Legal Section */}
-          <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Privacy Policy</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Licensing</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Terms &amp; Conditions</a>
-              </li>
-            </ul>
-          </div>
 
-          {/* Download Section */}
-          <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4">
-                <a href="#" className="hover:underline">iOS</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Android</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">Windows</a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">MacOS</a>
-              </li>
-            </ul>
+        </div>
+
+        {/* Download App and Social Media */}
+        <div className='h-[100px] mt-4  flex justify-between items-center' >
+          <div className="flex space-x-4 mb-4">
+            <p>
+              &copy; Blink Commerce Private Limited, 2016-2024
+            </p>
+          </div>
+          <div className="flex items-center  space-x-4 mb-4">
+            <h5 className="font-bold text-lg mb-4">Download App</h5>
+            <a href="#" className="block">
+              <img
+                src="/src/assets/googleplay.webp"
+                alt="Google Play"
+                className="h-10"
+              />
+            </a>
+            <a href="#" className="block">
+              <img
+                src="/src/assets/appstore.webp"
+                alt="App Store"
+                className="h-10"
+              />
+            </a>
+          </div>
+          <div className="flex space-x-4">
+            <h5 className="font-bold text-lg mb-4">Follow Us</h5>
+            {["facebook", "twitter", "instagram", "linkedin", "threads"].map(
+              (platform) => (
+                <a
+                  href="#"
+                  key={platform}
+                  className="text-gray-500 hover:text-gray-800"
+                >
+                  <i className={`fab fa-${platform} fa-lg`}></i>
+                </a>
+              )
+            )}
           </div>
         </div>
 
-        {/* Footer Bottom Section */}
-        <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
-            © 2023 <a href="https://flowbite.com/" className="hover:underline">Flowbite™</a>. All Rights Reserved.
-          </span>
-          <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-            {/* Social Media Icons */}
-            <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
-              <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
-                <path
-                  fillRule="evenodd"
-                  d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span className="sr-only">Facebook page</span>
-            </a>
-            {/* Additional Icons */}
-            <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
-              <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 21 16">
-                <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
-              </svg>
-              <span className="sr-only">Discord community</span>
-            </a>
-          </div>
+        {/* Footer Disclaimer */}
+        <div className="mt-8 text-left text-[14px] text-gray-500">
+          <p>
+          “Blinkit” is owned & managed by "Blink Commerce Private Limited" and is not related, linked or interconnected in whatsoever manner or nature, to “GROFFR.COM” which is a real estate services business operated by “Redstone Consultancy Services Private Limited”.
+          </p>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
+
+export default Footer;
