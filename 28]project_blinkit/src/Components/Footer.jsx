@@ -95,7 +95,7 @@ const Footer = () => {
 
           {/* Categories Section */}
           <div>
-            <h5 className="font-bold text-lg mb-4">Categories</h5>
+            <div className='flex gap-8' ><h5 className="font-bold text-lg mb-4">Categories</h5><p className='text-[#0C831F] text-[16px' >See all</p></div>
             <div className="grid grid-cols-3 gap-8">
               {/* Column 1 */}
               <ul>
