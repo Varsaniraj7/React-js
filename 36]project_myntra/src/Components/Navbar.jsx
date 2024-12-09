@@ -32,7 +32,6 @@ export default function Navbar() {
                         <input type="text" className="w-full h-full outline-none bg-transparent" placeholder="Search for products, brands and more" />
                     </div>
                 </div>
-
             </div>
             <div className="logo w-[195px] h-full flex justify-between items-center">
                 <div className='w-[40px] h-[60px] cursor-pointer flex flex-col justify-center items-center'>
