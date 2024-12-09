@@ -53,6 +53,7 @@ export default function Api_Crud() {
             setPrice(item.price);
             setRating(item.rating);
             setEditId(id);
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
     }
 
