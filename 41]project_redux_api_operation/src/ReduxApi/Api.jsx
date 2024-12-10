@@ -1,8 +1,8 @@
-import axios from 'axios';
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addData, deleteData, fetchApi, updateData } from '../fetures/ApiSlice';
 
-export default function Api_Crud() {
-    const [record, setRecord] = useState([]);
+export default function Api() {
 
     const [image, setImage] = useState("");
     const [title, setTitle] = useState("");
@@ -12,26 +12,26 @@ export default function Api_Crud() {
 
     const [editId, setEditId] = useState(null);
 
+    let dispatch = useDispatch();
+
     useEffect(() => {
-        fetchApi();
-    }, []);
+        dispatch(fetchApi())
+    }, [])
 
-    const fetchApi = async () => {
-        const { data } = await axios.get("http://localhost:5000/product");
-        setRecord(data);
-    };
+    const record = useSelector((state) => {
+        return state.ApiKey;
+    })
 
-    const addData = async () => {
-        if (editId) {
+    const addRecord = () => {
+        if (editId == null) {
+            let obj = { id: String(record.record.length + 1), image, title, description, price, rating };
+            dispatch(addData(obj));
+        }else{
             let updateObj = { id: editId, image, title, description, price, rating };
-            await axios.put(`http://localhost:5000/product/${editId}`, updateObj);
-            setRecord(record.map((e) => e.id === editId ? updateObj : e))
+            dispatch(updateData({editId,updData:    updateObj}));
             setEditId(null)
-        } else {
-            let obj = { id: String(record.length + 1), image, title, description, price, rating };
-            let sendRecord = await axios.post("http://localhost:5000/product", obj)
-            setRecord([...record, obj])
         }
+
         setImage("")
         setTitle("")
         setDescription("")
@@ -39,22 +39,18 @@ export default function Api_Crud() {
         setRating("")
     }
 
-    const deleteData = async (id) => {
-        let deleteRecord = await axios.delete(`http://localhost:5000/product/${id}`)
-        fetchApi();
+    const deleteRecord = (i) => {
+        dispatch(deleteData(i))
     }
 
-    const updateData = async (id) => {
-        let item = record.find((item) => item.id === id);
-        if (item) {
-            setImage(item.image);
-            setTitle(item.title);
-            setDescription(item.description);
-            setPrice(item.price);
-            setRating(item.rating);
-            setEditId(id);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+    const updateRecord = (e) => {
+        setEditId(e.id)
+        setImage(e.image);
+        setTitle(e.title);
+        setDescription(e.description);
+        setPrice(e.price);
+        setRating(e.rating);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     return (
@@ -99,7 +95,7 @@ export default function Api_Crud() {
                     className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700"
                 />
                 <button
-                    onClick={addData}
+                    onClick={addRecord}
                     className="px-6 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 hover:shadow-lg dark:bg-blue-700 dark:hover:bg-blue-800"
                 >
                     {editId ? "Update Data" : "Add Data"}
@@ -107,8 +103,8 @@ export default function Api_Crud() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-6">
-                {record &&
-                    record.map((e, i) => (
+                {record.loading == false &&
+                    record.record.map((e, i) => (
                         <div
                             key={i}
                             className="w-[300px] flex flex-col items-center bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden hover:shadow-lg hover:scale-105 transition-transform dark:shadow-gray-700"
@@ -134,13 +130,13 @@ export default function Api_Crud() {
                             </div>
                             <div className="flex justify-center gap-4 p-4">
                                 <button
-                                    onClick={() => updateData(e.id)}
+                                    onClick={() => updateRecord(e)}
                                     className="bg-blue-500 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-600 hover:shadow-md dark:bg-blue-700 dark:hover:bg-blue-800 hover:scale-105 transition-transform"
                                 >
                                     Edit
                                 </button>
                                 <button
-                                    onClick={() => deleteData(e.id)}
+                                    onClick={() => deleteRecord(e.id)}
                                     className="bg-red-500 text-white px-4 py-2 rounded-md font-medium hover:bg-red-600 hover:shadow-md dark:bg-red-700 dark:hover:bg-red-800 hover:scale-105 transition-transform"
                                 >
                                     Delete
@@ -150,5 +146,5 @@ export default function Api_Crud() {
                     ))}
             </div>
         </div>
-    );
+    )
 }
