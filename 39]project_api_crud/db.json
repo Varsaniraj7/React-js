@@ -150,14 +150,6 @@
       "category": "women's clothing",
       "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
       "rating": 3.8
-    },
-    {
-      "id": "19",
-      "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-      "title": "Women's Moisture Tee",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam veritatis id saepe fugiat minima ea temporibus maiores sapiente. Distinctio dignissimos doloremque quam qui molestias iste cum nesciunt commodi, magnam neque.",
-      "price": "5",
-      "rating": 4.5
     }
   ]
 }

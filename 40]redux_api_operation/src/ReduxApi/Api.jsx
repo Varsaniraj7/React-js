@@ -28,7 +28,7 @@ export default function Api() {
             dispatch(addData(obj));
         }else{
             let updateObj = { id: editId, image, title, description, price, rating };
-            dispatch(updateData({editId,updData:    updateObj}));
+            dispatch(updateData({editId,updData:updateObj}));
             setEditId(null)
         }
 

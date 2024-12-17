@@ -30,7 +30,7 @@ export default function Api_Crud() {
         } else {
             let obj = { id: String(record.length + 1), image, title, description, price, rating };
             let sendRecord = await axios.post("http://localhost:5000/product", obj)
-            setRecord([...record, obj])
+            setRecord([...record, obj]) 
         }
         setImage("")
         setTitle("")
